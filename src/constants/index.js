@@ -146,7 +146,7 @@ const projects = [
     ],
     image: Portfolio,
     source_code_link: "https://github.com/kali-upper/MY-portfolio",
-    live_demo_link: "https://fote.vercel.app/"
+    live_demo_link: "https://fote-old.vercel.app/"
   },
   {
     name: "Youtube Filter",
