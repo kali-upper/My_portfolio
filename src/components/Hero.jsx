@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
-import herobg from "../../src/assets/herobg.png"; // استيراد الصورة
+import herobg from "../../src/assets/herobg.webp"; // استيراد الصورة
 
 const Hero = () => {
   return (
@@ -14,10 +14,8 @@ const Hero = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      {/* إضافة طبقة شفافة فوق الصورة لتحسين وضوح المحتوى */}
       <div className="absolute inset-0 bg-black opacity-50" />
       
-      {/* باقي المحتوى */}
       <div
         className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
