@@ -24,8 +24,11 @@ const ServiceCard = ({ index, title, icon }) => (
       >
         <img
           src={icon}
-          alt='web-development'
+          alt={`${title} service icon`}
           className='w-24 h-24 object-contain'
+          loading="lazy"
+          width="96"
+          height="96"
         />
 
         <h3 className='text-white text-[24px] font-bold text-center'>
@@ -38,7 +41,7 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <>
+    <section id="about-section">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
@@ -60,7 +63,7 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
