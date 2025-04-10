@@ -25,6 +25,7 @@ Lighthouse_logs
 *.sw?
 
 .env
+.env.local
 
 # vscode
 .vscode
