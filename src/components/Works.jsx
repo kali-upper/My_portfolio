@@ -29,10 +29,15 @@ const ProjectCard = ({
         <div 
           className='relative w-full h-[230px] cursor-pointer'
           onClick={() => window.open(live_demo_link, "_blank")}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') window.open(live_demo_link, "_blank");
+          }}
         >
           <img
             src={image}
-            alt='project_image'
+            alt={`${name} - ${description.substring(0, 50)}...`}
             className='w-full h-full object-cover rounded-2xl'
           />
 
@@ -43,10 +48,19 @@ const ProjectCard = ({
                 window.open(source_code_link, "_blank");
               }}
               className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.stopPropagation();
+                  window.open(source_code_link, "_blank");
+                }
+              }}
+              aria-label={`View source code for ${name}`}
             >
               <img
                 src={github}
-                alt='source code'
+                alt={`GitHub repository for ${name}`}
                 className='w-1/2 h-1/2 object-contain'
               />
             </div>
@@ -56,6 +70,11 @@ const ProjectCard = ({
         <div 
           className='mt-5 cursor-pointer'
           onClick={() => window.open(live_demo_link, "_blank")}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') window.open(live_demo_link, "_blank");
+          }}
         >
           <h3 className='text-white font-bold text-[24px] hover:text-blue-500'>{name}</h3>
           <p className='mt-2 text-secondary text-[14px]'>{description}</p>
@@ -78,7 +97,7 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <>
+    <section>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
@@ -102,7 +121,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
