@@ -6,14 +6,17 @@ import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-    <div className='flex flex-row flex-wrap justify-center gap-10'>
+    <section className='flex flex-row flex-wrap justify-center gap-10'>
       {technologies.map((technology) => (
         <div className='w-28 h-28' key={technology.name}>
           <BallCanvas icon={technology.icon} />
+          <p className="text-center text-secondary mt-2">{technology.name}</p>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
-export default SectionWrapper(Tech, "");
+// Change the export to make it work with lazy loading
+const WrappedTech = SectionWrapper(Tech, "");
+export default WrappedTech;

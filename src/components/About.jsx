@@ -67,4 +67,6 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+// Change the export to make it work with lazy loading
+const WrappedAbout = SectionWrapper(About, "about");
+export default WrappedAbout;

@@ -29,7 +29,7 @@ const FeedbackCard = ({
             <span className='blue-text-gradient'>@</span> {name}
           </p>
           <p className='mt-1 text-secondary text-[12px]'>
-            {designation}  {company}
+            {designation} {company && `of ${company}`}
           </p>
         </div>
 
@@ -37,6 +37,7 @@ const FeedbackCard = ({
           src={image}
           alt={`feedback_by-${name}`}
           className='w-10 h-10 rounded-full object-cover'
+          loading="lazy"
         />
       </div>
     </div>
@@ -45,7 +46,7 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    <section className="mt-12 bg-black-100 rounded-[20px]">
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
@@ -59,8 +60,10 @@ const Feedbacks = () => {
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default SectionWrapper(Feedbacks, "");
+// Change the export to make it work with lazy loading
+const WrappedFeedbacks = SectionWrapper(Feedbacks, "");
+export default WrappedFeedbacks;

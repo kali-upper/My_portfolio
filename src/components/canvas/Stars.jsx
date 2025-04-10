@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, useMemo } from "react";
+import { useRef, Suspense, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
@@ -55,6 +55,7 @@ const StarsCanvas = () => {
       <Canvas 
         camera={{ position: [0, 0, 1] }}
         gl={{ antialias: false }}
+        performance={{ min: 0.1 }} // Add performance optimization
       >
         <Suspense fallback={null}>
           <Stars />
