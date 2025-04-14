@@ -5,6 +5,14 @@ import {
   ytFilter,
   videoPortfolio,
   react,
+  css,
+  git,
+  html,
+  javascript,
+  nodejs,
+  reactjs,
+  tailwind,
+  typescript
 } from "../assets";
 
 export const navLinks = [
@@ -43,17 +51,37 @@ const services = [
 
 const technologies = [
   {
-    name: "Web Development",
-    icon: web,
+    name: "HTML 5",
+    icon: html,
   },
   {
-    name: "React.js",
-    icon: react,
+    name: "CSS 3",
+    icon: css,
   },
   {
-    name: "Content Creation",
-    icon: creator,
+    name: "git",
+    icon: git,
   },
+  {
+    name: "JavaScript",
+    icon: javascript,
+  },
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
+  {
+    name: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "Node JS",
+    icon: nodejs,
+  }
 ];
 
 const experiences = [
