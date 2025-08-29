@@ -30,7 +30,7 @@ const Hero = () => {
             Hi, I'm <span className='green-text-gradient'>FOTE</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I'm Front End Developer<br className='sm:block hidden' />
+            I'm a Front End Developer<br className='sm:block hidden' />
             I Develop Interfaces And Web Applications
           </p>
         </div>
